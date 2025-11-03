@@ -1,787 +1,16 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I Putu Nanda Amanta - Backend Developer & Web Developer with 4+ years of experience building scalable, maintainable, and high-performance backend architectures across various industries.">
+    <meta name="keywords" content="Backend Developer, Web Developer, Full Stack Developer, Java, PHP, JavaScript, Laravel, Spring Boot, Node.js, Bali Developer">
+    <meta name="author" content="I Putu Nanda Amanta">
+    <meta property="og:title" content="I Putu Nanda Amanta - Backend Developer & Web Developer">
+    <meta property="og:description" content="Experienced Backend Developer specializing in scalable architectures and high-performance web applications.">
+    <meta property="og:type" content="website">
     <title>I Putu Nanda Amanta - Backend Developer & Web Developer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #3b82f6;
-            --primary-light: #60a5fa;
-            --accent: #8b5cf6;
-            --accent-light: #a78bfa;
-            --bg-dark: #0a0a0f;
-            --bg-darker: #050508;
-            --bg-card: #12121a;
-            --text-primary: #ffffff;
-            --text-secondary: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-dark);
-            overflow-x: hidden;
-        }
-
-        /* Background Animation */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .gradient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
-            animation: float 20s infinite;
-        }
-
-        .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            top: -250px;
-            right: -250px;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            bottom: -200px;
-            left: -200px;
-            animation-delay: 5s;
-        }
-
-        .orb-3 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
-            top: 50%;
-            left: 50%;
-            animation-delay: 10s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(100px, -100px) scale(1.1); }
-            66% { transform: translate(-100px, 100px) scale(0.9); }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 2rem 4rem;
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            z-index: 1;
-        }
-
-        .hero-text {
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-label {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--primary-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat-item {
-            text-align: left;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary);
-        }
-
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-frame {
-            position: relative;
-            width: 400px;
-            height: 400px;
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 30px;
-            object-fit: cover;
-            border: 2px solid var(--border);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120%;
-            height: 120%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 30px;
-            filter: blur(40px);
-            opacity: 0.4;
-            z-index: 1;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
-            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section */
-        section {
-            position: relative;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 6rem 2rem;
-            z-index: 1;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-label {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--accent-light);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Glass Card */
-        .glass-card {
-            background: rgba(18, 18, 26, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: rgba(18, 18, 26, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
-        }
-
-        .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            padding: 0.5rem 1rem;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--primary-light);
-            transition: all 0.3s;
-        }
-
-        .tag:hover {
-            background: rgba(59, 130, 246, 0.2);
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--primary), var(--accent));
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            background: rgba(18, 18, 26, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.3s;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3.5rem;
-            top: 2.5rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            box-shadow: 0 0 0 4px var(--bg-dark), 0 0 20px rgba(59, 130, 246, 0.5);
-        }
-
-        .timeline-item h3 {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .meta-badge {
-            padding: 0.3rem 0.8rem;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 15px;
-            font-size: 0.85rem;
-            color: var(--accent-light);
-        }
-
-        .timeline-item ul {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .timeline-item li {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(18, 18, 26, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
-        }
-
-        .project-card-content {
-            padding: 2rem;
-        }
-
-        .project-card h3 {
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-role {
-            font-size: 0.9rem;
-            color: var(--primary-light);
-            margin-bottom: 1rem;
-        }
-
-        .project-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-item {
-            background: rgba(18, 18, 26, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-        }
-
-        .contact-item h3 {
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-item a {
-            color: var(--primary-light);
-            text-decoration: none;
-            word-break: break-all;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-light);
-        }
-
-        .contact-item p {
-            color: var(--text-secondary);
-        }
-
-        /* Footer */
-        footer {
-            position: relative;
-            background: var(--bg-darker);
-            border-top: 1px solid var(--border);
-            text-align: center;
-            padding: 3rem 2rem;
-            z-index: 1;
-        }
-
-        footer p {
-            color: var(--text-secondary);
-        }
-
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 50px;
-            border: 2px solid var(--border);
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            padding-top: 8px;
-        }
-
-        .scroll-indicator::before {
-            content: '';
-            width: 4px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 2px;
-            animation: scroll 2s infinite;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(20px); opacity: 0; }
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-
-            .profile-frame {
-                width: 300px;
-                height: 300px;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .cta-buttons {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 10, 15, 0.95);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .profile-frame {
-                width: 250px;
-                height: 250px;
-            }
-
-            .timeline {
-                padding-left: 2rem;
-            }
-
-            .timeline-item::before {
-                left: -2.5rem;
-            }
-        }
-    </style>
+    <style type="text/css" href="css/style.css"></style>
 </head>
 <body>
     <!-- Background Animation -->
@@ -795,7 +24,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">NA</div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -814,7 +43,7 @@
                 <h1>I Putu Nanda Amanta</h1>
                 <p class="subtitle">Backend Developer & Web Developer</p>
                 <p class="hero-description">
-                    Membangun backend architecture yang scalable, maintainable, dan high-performance untuk berbagai industri. Berpengalaman 4+ tahun dalam pengembangan perangkat lunak.
+                    Building scalable, maintainable, and high-performance backend architectures for various industries. With over 4 years of experience in software development, I specialize in creating robust solutions that drive business growth.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -835,7 +64,7 @@
                         <span>Let's Talk</span>
                         <span>→</span>
                     </a>
-                    <a href="https://github.com/nandaamanta" class="btn btn-secondary" target="_blank">
+                    <a href="https://github.com/nandaamanta" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                         <span>View GitHub</span>
                         <span>↗</span>
                     </a>
@@ -844,7 +73,7 @@
             <div class="hero-image">
                 <div class="profile-frame">
                     <div class="profile-glow"></div>
-                    <img src="https://nandaamanta.github.io/asset/img/nanda2.jpeg" alt="Nanda Amanta" class="profile-img">
+                    <img src="https://nandaamanta.github.io/asset/img/nanda2.jpeg" alt="I Putu Nanda Amanta - Backend Developer" class="profile-img">
                 </div>
             </div>
         </div>
@@ -856,7 +85,7 @@
         <div class="section-header">
             <span class="section-label">What I Do</span>
             <h2 class="section-title">Technical Expertise</h2>
-            <p class="section-subtitle">Menguasai berbagai teknologi modern untuk membangun solusi digital yang powerful</p>
+            <p class="section-subtitle">Mastering various modern technologies to build powerful digital solutions</p>
         </div>
         <div class="skills-grid">
             <div class="skill-card">
@@ -912,7 +141,7 @@
         <div class="section-header">
             <span class="section-label">Career Journey</span>
             <h2 class="section-title">Work Experience</h2>
-            <p class="section-subtitle">Pengalaman profesional di berbagai perusahaan dan industri</p>
+            <p class="section-subtitle">Professional experience across various companies and industries</p>
         </div>
         <div class="timeline">
             <div class="timeline-item">
@@ -923,54 +152,56 @@
                     <span class="meta-badge">Denpasar, Bali</span>
                 </div>
                 <ul>
-                    <li>Mengembangkan aplikasi full-stack berbasis Laravel dengan fokus pada performa dan skalabilitas</li>
-                    <li>Refactor codebase untuk meningkatkan maintainability dan mengurangi technical debt</li>
-                    <li>Memberikan dukungan teknis dan insight untuk peningkatan kualitas produk tim</li>
+                    <li>Developing full-stack Laravel applications with focus on performance and scalability</li>
+                    <li>Refactoring codebase to improve maintainability and reduce technical debt</li>
+                    <li>Providing technical<li>Providing technical support and insights to improve product quality</li>
+                    <li>Collaborating with cross-functional teams to deliver robust solutions</li>
                 </ul>
             </div>
-
+            
             <div class="timeline-item">
                 <h3>Fullstack Developer</h3>
                 <div class="timeline-meta">
                     <span class="meta-badge">Omni IT Consulting</span>
                     <span class="meta-badge">May 2025 - Present</span>
-                    <span class="meta-badge">Surabaya</span>
+                    <span class="meta-badge">Surabaya, Indonesia</span>
                 </div>
                 <ul>
-                    <li>Membangun dan memelihara sistem ERP (finance, inventory, HR)</li>
-                    <li>Merancang dan mengimplementasikan layanan backend yang scalable menggunakan Laravel</li>
-                    <li>Berkolaborasi lintas tim<li>Berkolaborasi lintas tim untuk memastikan solusi sesuai dengan kebutuhan bisnis</li>
+                    <li>Building and maintaining ERP systems (finance, inventory, HR modules)</li>
+                    <li>Designing and implementing scalable backend services using Laravel</li>
+                    <li>Collaborating across teams to ensure solutions meet business requirements</li>
                 </ul>
             </div>
-
+            
             <div class="timeline-item">
                 <h3>Freelance Backend Developer</h3>
                 <div class="timeline-meta">
                     <span class="meta-badge">Vodjo</span>
                     <span class="meta-badge">May 2025 - Jul 2025</span>
-                    <span class="meta-badge">Bandung</span>
+                    <span class="meta-badge">Bandung, Indonesia</span>
                 </div>
                 <ul>
-                    <li>Mengembangkan platform ride-hailing seperti Gojek menggunakan Node.js (Express)</li>
-                    <li>Membangun RESTful API untuk pemesanan, pembayaran, dan pelacakan real-time</li>
-                    <li>Berkontribusi dalam skalabilitas sistem untuk menangani pengguna serentak</li>
+                    <li>Developed ride-hailing platform similar to Gojek using Node.js (Express)</li>
+                    <li>Built RESTful APIs for booking, payments, and real-time tracking</li>
+                    <li>Contributed to system scalability to handle concurrent users</li>
                 </ul>
             </div>
-
+            
             <div class="timeline-item">
                 <h3>Backend Developer</h3>
                 <div class="timeline-meta">
                     <span class="meta-badge">DOT Indonesia</span>
                     <span class="meta-badge">Aug 2022 - Nov 2024</span>
-                    <span class="meta-badge">Jakarta</span>
+                    <span class="meta-badge">Jakarta, Indonesia</span>
                 </div>
                 <ul>
-                    <li>Mengembangkan RESTful API untuk berbagai aplikasi web skala besar</li>
-                    <li>Berkolaborasi dengan tim frontend, QA, dan project manager</li>
-                    <li>Bertanggung jawab atas komunikasi teknis dengan klien dan delivery tepat waktu</li>
+                    <li>Developed RESTful APIs for large-scale web applications</li>
+                    <li>Collaborated with frontend, QA, and project management teams</li>
+                    <li>Managed technical communication with clients and ensured timely delivery</li>
+                    <li>Worked on government projects including DPR Open Data and messaging systems</li>
                 </ul>
             </div>
-
+            
             <div class="timeline-item">
                 <h3>Junior Backend Developer</h3>
                 <div class="timeline-meta">
@@ -979,23 +210,24 @@
                     <span class="meta-badge">Denpasar, Bali</span>
                 </div>
                 <ul>
-                    <li>Mengembangkan fitur baru dan memperbaiki bug untuk menjaga stabilitas sistem</li>
-                    <li>Mengelola server dan memastikan performa optimal aplikasi logistik</li>
-                    <li>Memberikan support teknis untuk operasional sistem harian</li>
+                    <li>Developed new features and fixed bugs to maintain system stability</li>
+                    <li>Managed servers and ensured optimal performance of logistics applications</li>
+                    <li>Gained foundational experience in production environment management</li>
                 </ul>
             </div>
-
+            
             <div class="timeline-item">
-                <h3>Fullstack Developer (Founder)</h3>
+                <h3>Founder & Fullstack Developer</h3>
                 <div class="timeline-meta">
                     <span class="meta-badge">EXP Digital Solution</span>
                     <span class="meta-badge">2021 - Present</span>
-                    <span class="meta-badge">Bali</span>
+                    <span class="meta-badge">Bali, Indonesia</span>
                 </div>
                 <ul>
-                    <li>Mendesain sistem, database, dan arsitektur teknologi untuk berbagai klien</li>
-                    <li>Mengelola server Ubuntu untuk seluruh website klien</li>
-                    <li>Berfokus pada UI/UX, performa, dan hasil yang berdampak bagi bisnis</li>
+                    <li>Founded software house providing digital solutions for various clients</li>
+                    <li>Designed system architecture and database structures</li>
+                    <li>Managed Ubuntu servers for all client websites</li>
+                    <li>Focused on UI/UX, performance, and business impact</li>
                 </ul>
             </div>
         </div>
@@ -1004,80 +236,112 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="section-header">
-            <span class="section-label">Featured Work</span>
-            <h2 class="section-title">Notable Projects</h2>
-            <p class="section-subtitle">Proyek-proyek yang telah saya kerjakan untuk berbagai klien dan industri</p>
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Selected work demonstrating expertise across various industries</p>
         </div>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-card-content">
                     <h3>DPR Open Data</h3>
                     <p class="project-role">Backend Developer @ DOT Indonesia</p>
-                    <p>Sistem open data publik untuk DPR dengan performa tinggi dan keamanan terjamin. Menangani ribuan request per hari.</p>
+                    <p>Public open data system for Indonesian Parliament with high-performance architecture. Implemented efficient data retrieval and processing mechanisms for large-scale government data.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-card-content">
                     <h3>DPR Sniper (Messaging System)</h3>
                     <p class="project-role">Backend Developer @ DOT Indonesia</p>
-                    <p>Sistem internal komunikasi DPR dengan keamanan tingkat tinggi untuk persuratan dan messaging antar departemen.</p>
+                    <p>Internal communication system for Indonesian Parliament with enterprise-level security. Built secure messaging infrastructure with role-based access control.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">MySQL</span>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-card-content">
                     <h3>Papua Football Academy</h3>
                     <p class="project-role">Backend Developer @ Triwangsa Digital</p>
-                    <p>Platform manajemen akademi sepak bola dengan fokus pada optimasi performa backend dan user experience.</p>
+                    <p>Sports academy management system with focus on backend performance optimization. Implemented efficient data handling for athlete records and scheduling.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">AWS</span>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-card-content">
                     <h3>MIND ID Retirement System</h3>
                     <p class="project-role">Backend Developer @ DOT Indonesia</p>
-                    <p>Sistem perhitungan bonus pensiun yang kompleks dengan zero error di produksi dan akurasi data tinggi.</p>
+                    <p>Pension bonus calculation system with zero production errors. Developed accurate financial computation algorithms and thorough testing procedures.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Java</span>
+                        <span class="tag">Micronaut</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-card-content">
                     <h3>Exclusive Rent Bali</h3>
-                    <p class="project-role">Freelance Project</p>
-                    <p>Website rental kendaraan premium dengan SEO kuat, UI/UX modern, dan sistem booking terintegrasi.</p>
+                    <p class="project-role">Freelance Project @ EXP Digital Solution</p>
+                    <p>Vehicle rental website with strong SEO optimization and modern UI/UX. Full-stack development including booking system and payment integration.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">MySQL</span>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-card-content">
-                    <h3>Moonestate</h3>
-                    <p class="project-role">Freelance Project</p>
-                    <p>Platform properti digital berbasis Laravel dan Tailwind dengan fitur pencarian dan filter advanced.</p>
+                    <h3>Moonestate Property</h3>
+                    <p class="project-role">Freelance Project @ EXP Digital Solution</p>
+                    <p>Real estate platform for property listings and management. Implemented property search, filtering, and inquiry systems.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">MySQL</span>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-card-content">
                     <h3>Slukat Learning Center</h3>
-                    <p class="project-role">Freelance Project</p>
-                    <p>Website lembaga pendidikan dengan sistem manajemen kursus dan pembayaran online.</p>
+                    <p class="project-role">Freelance Project @ EXP Digital Solution</p>
+                    <p>Educational platform for learning center management. Built student enrollment, course management, and progress tracking features.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-card-content">
-                    <h3>Mariz Property</h3>
-                    <p class="project-role">Freelance Project</p>
-                    <p>Website properti dengan integrasi WhatsApp dan Google Maps untuk kemudahan komunikasi klien.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Jehem Meadolan</h3>
-                    <p class="project-role">Freelance Project</p>
-                    <p>Platform sosial untuk komunitas Bali dengan fokus pada pelestarian budaya dan tradisi lokal.</p>
+                    <h3>Ride-Hailing Platform</h3>
+                    <p class="project-role">Backend Developer @ Vodjo</p>
+                    <p>Gojek-like platform with real-time tracking and payment integration. Developed scalable microservices architecture for high-concurrency scenarios.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1088,7 +352,7 @@
         <div class="section-header">
             <span class="section-label">Get In Touch</span>
             <h2 class="section-title">Let's Work Together</h2>
-            <p class="section-subtitle">Tertarik untuk berkolaborasi? Hubungi saya melalui kontak di bawah ini</p>
+            <p class="section-subtitle">Open for freelance projects and full-time opportunities</p>
         </div>
         <div class="contact-grid">
             <div class="contact-item">
@@ -1099,17 +363,17 @@
             <div class="contact-item">
                 <div class="contact-icon">📱</div>
                 <h3>Phone</h3>
-                <a href="tel:+6289533066787">+62 895-3306-67787</a>
+                <p>+62 895-3306-67787</p>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">💼</div>
                 <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/nandaamanta" target="_blank">linkedin.com/in/nandaamanta</a>
+                <a href="https://www.linkedin.com/in/i-putu-nanda-amanta" target="_blank" rel="noopener noreferrer">View Profile</a>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">💻</div>
                 <h3>GitHub</h3>
-                <a href="https://github.com/nandaamanta" target="_blank">github.com/nandaamanta</a>
+                <a href="https://github.com/nandaamanta" target="_blank" rel="noopener noreferrer">@nandaamanta</a>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">📍</div>
@@ -1121,84 +385,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 I Putu Nanda Amanta. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with passion in Bali 🌴</p>
+        <p>&copy; 2024 I Putu Nanda Amanta. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Backend Developer | Web Developer | Software Engineer</p>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('nav');
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu after click
-                    document.getElementById('navLinks').classList.remove('active');
-                }
-            });
-        });
-
-        // Add scroll effect to navigation
-        let lastScroll = 0;
-        const nav = document.querySelector('nav');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                nav.style.background = 'rgba(10, 10, 15, 0.95)';
-                nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-            } else {
-                nav.style.background = 'rgba(10, 10, 15, 0.8)';
-                nav.style.boxShadow = 'none';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and timeline items
-        document.querySelectorAll('.skill-card, .timeline-item, .project-card, .contact-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
