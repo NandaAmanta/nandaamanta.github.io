@@ -1,394 +1,408 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I Putu Nanda Amanta - Backend Developer & Web Developer with 4+ years of experience building scalable, maintainable, and high-performance backend architectures across various industries.">
-    <meta name="keywords" content="Backend Developer, Web Developer, Full Stack Developer, Java, PHP, JavaScript, Laravel, Spring Boot, Node.js, Bali Developer">
+    
+    <!-- SEO Meta Tags -->
+    <title>I Putu Nanda Amanta | Backend Developer & Software Engineer</title>
+    <meta name="description" content="Portfolio of I Putu Nanda Amanta, a Backend Developer and Software Engineer with over 4 years of experience building scalable, maintainable, and high-performance architectures.">
+    <meta name="keywords" content="I Putu Nanda Amanta, Backend Developer, Software Engineer, Portfolio, Java, Spring Boot, Node.js, Laravel, DOT Indonesia, Web Developer, Indonesia">
     <meta name="author" content="I Putu Nanda Amanta">
-    <meta property="og:title" content="I Putu Nanda Amanta - Backend Developer & Web Developer">
-    <meta property="og:description" content="Experienced Backend Developer specializing in scalable architectures and high-performance web applications.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="I Putu Nanda Amanta | Software Engineer">
+    <meta property="og:description" content="Backend Developer with 4+ years of experience building scalable enterprise systems. View my projects and career journey.">
     <meta property="og:type" content="website">
-    <title>I Putu Nanda Amanta - Backend Developer & Web Developer</title>
-        <link rel="stylesheet" href="css/style.css">
+    <meta property="og:url" content="https://nandaamanta.github.io/">
+    <!-- Pastikan nama file foto Anda adalah profile.jpg dan sudah diupload ke GitHub -->
+    <meta property="og:image" content="https://nandaamanta.github.io/profile.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nandaamanta.github.io/">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display:['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#059669',       // Emerald 600
+                        primaryHover: '#047857',  // Emerald 700
+                        primaryLight: '#D1FAE5',  // Emerald 100
+                        secondary: '#14B8A6',     // Teal 500
+                        secondaryLight: '#CCFBF1',// Teal 100
+                        dark: '#0F172A',          // Slate 900
+                        light: '#F8FAFC',         // Slate 50
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F8FAFC; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #059669, #14B8A6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(5, 150, 105, 0.12); 
+        }
+        .bg-gradient-soft {
+            background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.08), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(5, 150, 105, 0.08), transparent 40%);
+        }
+    </style>
 </head>
-<body>
-    <!-- Background Animation -->
-    <div class="bg-animation">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-    </div>
+<body class="text-slate-700 antialiased selection:bg-primary selection:text-white">
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">NA</div>
-            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- Header / Navbar -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" aria-label="Home" class="font-display font-bold text-2xl tracking-tight text-dark">
+                    Nanda<span class="text-primary">Amanta.</span>
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center font-medium text-sm text-slate-600">
+                    <a href="#bio" class="hover:text-primary transition">Bio</a>
+                    <a href="#career" class="hover:text-primary transition">Career</a>
+                    <a href="#projects" class="hover:text-primary transition">Projects</a>
+                    <a href="#skills" class="hover:text-primary transition">Skills</a>
+                    <a href="#contact" class="px-6 py-2.5 rounded-full bg-dark text-white hover:bg-primary transition shadow-md">Contact Me</a>
+                </nav>
+            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="hero-label">👋 Hello, I'm</span>
-                <h1>I Putu Nanda Amanta</h1>
-                <p class="subtitle">Backend Developer & Web Developer</p>
-                <p class="hero-description">
-                    Building scalable, maintainable, and high-performance backend architectures for various industries. With over 4 years of experience in software development, I specialize in creating robust solutions that drive business growth.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-label">Years Experience</div>
+    <main>
+        <!-- 1. Bio / Hero Section (WITH PHOTO) -->
+        <section id="bio" class="pt-36 pb-20 lg:pt-48 lg:pb-32 bg-gradient-soft border-b border-slate-200/50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+                
+                <!-- Text Content -->
+                <div class="flex-1 text-center lg:text-left z-10">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8">
+                        <span class="flex w-2.5 h-2.5 bg-emerald-500 rounded-full mr-2 animate-pulse"></span>
+                        <span class="text-sm font-medium text-slate-600">Available for Work</span>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3.8</div>
-                        <div class="stat-label">GPA</div>
+                    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6">
+                        Architecting <span class="text-gradient">High-Performance</span><br class="hidden xl:block"/> Digital Solutions.
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                        Hi, I'm <strong>I Putu Nanda Amanta</strong>. A <em>Backend & Web Developer</em> with over 4 years of experience building scalable, maintainable, and high-performance system architectures across various industries.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#projects" class="px-8 py-4 rounded-full bg-primary text-white font-medium hover:bg-primaryHover transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                            View My Work <i class="fas fa-arrow-down text-sm"></i>
+                        </a>
+                        <a href="https://github.com/nandaamanta" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full bg-white text-dark border border-slate-200 font-medium hover:bg-slate-50 transition shadow-sm flex items-center justify-center gap-2">
+                            <i class="fab fa-github text-lg"></i> GitHub Profile
+                        </a>
                     </div>
                 </div>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Let's Talk</span>
-                        <span>→</span>
+
+                <!-- Image Content -->
+                <div class="flex-1 relative flex justify-center lg:justify-end w-full max-w-md lg:max-w-lg mx-auto">
+                    <!-- Aesthetic Background Blob -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primaryLight to-secondaryLight rounded-full blur-3xl opacity-60 -z-10 transform scale-90 translate-x-4 translate-y-4"></div>
+                    
+                    <!-- Profile Picture Frame -->
+                    <!-- ATTENTION: Make sure 'profile.jpg' is in your repository! -->
+                    <div class="relative rounded-3xl overflow-hidden border-8 border-white shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 w-full max-w-[320px] sm:max-w-[380px] aspect-[4/5] bg-slate-100">
+                        <img src="./profile.jpg" alt="I Putu Nanda Amanta - Software Engineer" class="w-full h-full object-cover object-center" loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. Client Company (Trust Markers) -->
+        <section class="py-12 bg-white" aria-label="Trusted Companies">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-[0.2em] mb-8">Trusted By Innovative Companies & Institutions</p>
+                <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+                    <span class="font-display font-bold text-2xl text-dark">DOT Indonesia</span>
+                    <span class="font-display font-bold text-2xl text-dark">MIND ID</span>
+                    <span class="font-display font-bold text-2xl text-dark">DPR RI</span>
+                    <span class="font-display font-bold text-2xl text-dark">Vodjo</span>
+                    <span class="font-display font-bold text-2xl text-dark">EXP Digital</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Achievement Section -->
+        <section id="achievements" class="py-20 lg:py-28 bg-light">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center card-hover">
+                        <i class="fas fa-briefcase text-3xl text-primary mb-4" aria-hidden="true"></i>
+                        <h3 class="font-display text-4xl font-bold text-dark mb-1">4+</h3>
+                        <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Years Experience</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center card-hover">
+                        <i class="fas fa-code-branch text-3xl text-secondary mb-4" aria-hidden="true"></i>
+                        <h3 class="font-display text-4xl font-bold text-dark mb-1">10+</h3>
+                        <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Large-Scale Projects</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center card-hover">
+                        <i class="fas fa-shield-alt text-3xl text-primary mb-4" aria-hidden="true"></i>
+                        <h3 class="font-display text-4xl font-bold text-dark mb-1">0%</h3>
+                        <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Production Errors</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center card-hover">
+                        <i class="fas fa-building text-3xl text-secondary mb-4" aria-hidden="true"></i>
+                        <h3 class="font-display text-4xl font-bold text-dark mb-1">1</h3>
+                        <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Software House Founded</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Career Section -->
+        <section id="career" class="py-20 lg:py-28 bg-white border-y border-slate-100">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">Professional Career</h2>
+                    <p class="text-slate-500">My professional track record and the impact I've delivered.</p>
+                </div>
+
+                <div class="relative border-l-2 border-primaryLight ml-3 md:ml-0">
+                    <!-- Timeline 1 -->
+                    <div class="mb-12 ml-8 md:ml-10 relative">
+                        <span class="absolute -left-[42px] md:-left-[50px] flex items-center justify-center w-6 h-6 bg-primaryLight rounded-full ring-8 ring-white">
+                            <span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-dark flex flex-wrap items-center gap-2">
+                            Founder & CEO 
+                            <span class="text-xs py-1 px-3 bg-secondaryLight text-teal-700 rounded-full">EXP Digital Solution</span>
+                        </h3>
+                        <p class="text-slate-600 mt-3 leading-relaxed">Founded a software house providing digital solutions for MSMEs (UMKM). Architected systems, designed database structures, and managed Ubuntu servers, with a strong focus on system analysis, performance, and direct business impact.</p>
+                    </div>
+                    <!-- Timeline 2 -->
+                    <div class="mb-12 ml-8 md:ml-10 relative">
+                        <span class="absolute -left-[42px] md:-left-[50px] flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full ring-8 ring-white">
+                            <span class="w-2.5 h-2.5 bg-slate-400 rounded-full"></span>
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-dark flex flex-wrap items-center gap-2">
+                            Backend Developer 
+                            <span class="text-xs py-1 px-3 bg-slate-100 text-slate-600 rounded-full">DOT Indonesia</span>
+                        </h3>
+                        <p class="text-slate-600 mt-3 leading-relaxed">Developed RESTful APIs for enterprise-scale web applications and government institutions (DPR Open Data & Messaging System). Collaborated with cross-functional teams and maintained technical communication with clients to ensure timely releases using Spring Boot and Micronaut.</p>
+                    </div>
+                    <!-- Timeline 3 -->
+                    <div class="mb-12 ml-8 md:ml-10 relative">
+                        <span class="absolute -left-[42px] md:-left-[50px] flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full ring-8 ring-white">
+                            <span class="w-2.5 h-2.5 bg-slate-400 rounded-full"></span>
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-dark flex flex-wrap items-center gap-2">
+                            Backend Developer 
+                            <span class="text-xs py-1 px-3 bg-slate-100 text-slate-600 rounded-full">Vodjo</span>
+                        </h3>
+                        <p class="text-slate-600 mt-3 leading-relaxed">Built a ride-hailing platform similar to Gojek, featuring real-time tracking and payment integration. Designed a scalable microservices architecture using Node.js, Express, and MongoDB to handle high concurrency.</p>
+                    </div>
+                    <!-- Timeline 4 -->
+                    <div class="ml-8 md:ml-10 relative">
+                        <span class="absolute -left-[42px] md:-left-[50px] flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full ring-8 ring-white">
+                            <span class="w-2.5 h-2.5 bg-slate-400 rounded-full"></span>
+                        </span>
+                        <h3 class="font-display text-xl font-bold text-dark flex flex-wrap items-center gap-2">
+                            Fullstack Developer 
+                            <span class="text-xs py-1 px-3 bg-slate-100 text-slate-600 rounded-full">Various ERP Systems</span>
+                        </h3>
+                        <p class="text-slate-600 mt-3 leading-relaxed">Designed and maintained comprehensive ERP systems (Finance, Inventory, and HR Modules). Implemented scalable backend services using the Laravel framework.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Projects Section -->
+        <section id="projects" class="py-20 lg:py-28 bg-light">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">Featured Projects</h2>
+                    <p class="text-slate-500">Selected portfolio of the digital solutions I have built.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-100 card-hover flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-2xl bg-primaryLight text-primary flex items-center justify-center mb-6 text-xl">
+                            <i class="fas fa-landmark" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-dark mb-2">DPR Open Data</h3>
+                        <p class="text-sm text-slate-400 mb-4">@ DOT Indonesia</p>
+                        <p class="text-slate-600 mb-6 flex-grow text-sm leading-relaxed">Public open data system for the Indonesian Parliament with high-performance architecture. Implemented efficient mechanisms for fetching and processing large-scale government data.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Java</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Spring Boot</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-100 card-hover flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-2xl bg-secondaryLight text-teal-600 flex items-center justify-center mb-6 text-xl">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-dark mb-2">DPR Sniper</h3>
+                        <p class="text-sm text-slate-400 mb-4">@ DOT Indonesia</p>
+                        <p class="text-slate-600 mb-6 flex-grow text-sm leading-relaxed">Centralized internal communication (Messaging System) for the Indonesian Parliament, heavily focused on enterprise-grade security and high stability.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Java</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">WebSockets</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Security</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-100 card-hover flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 text-xl">
+                            <i class="fas fa-money-check-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-dark mb-2">MIND ID Retirement</h3>
+                        <p class="text-sm text-slate-400 mb-4">@ DOT Indonesia</p>
+                        <p class="text-slate-600 mb-6 flex-grow text-sm leading-relaxed">Pension fund calculation system that successfully achieved perfect precision (0% Production Error) through robust financial algorithms and in-depth testing processes.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Java</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Micronaut</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-100 card-hover flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-6 text-xl">
+                            <i class="fas fa-car-side" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-dark mb-2">Ride-Hailing Platform</h3>
+                        <p class="text-sm text-slate-400 mb-4">@ Vodjo</p>
+                        <p class="text-slate-600 mb-6 flex-grow text-sm leading-relaxed">Ride-hailing platform featuring live tracking. Built on a microservices architecture to ensure high availability under massive user traffic.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Node.js</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Express</span>
+                            <span class="text-xs font-medium bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Skill Set Section -->
+        <section id="skills" class="py-20 lg:py-28 bg-white border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">Technical Expertise</h2>
+                    <p class="text-slate-500">Technologies and tools I have mastered to build reliable systems.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Skill 1 -->
+                    <div>
+                        <h4 class="font-display text-lg font-bold text-dark mb-4 flex items-center gap-2">
+                            <i class="fas fa-code text-primary" aria-hidden="true"></i> Languages
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-primaryLight hover:text-primary transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Java</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-primaryLight hover:text-primary transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">PHP</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-primaryLight hover:text-primary transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">JavaScript</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-primaryLight hover:text-primary transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Go</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-primaryLight hover:text-primary transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Python</span>
+                        </div>
+                    </div>
+                    <!-- Skill 2 -->
+                    <div>
+                        <h4 class="font-display text-lg font-bold text-dark mb-4 flex items-center gap-2">
+                            <i class="fas fa-layer-group text-secondary" aria-hidden="true"></i> Frameworks
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-secondaryLight hover:text-teal-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Spring Boot</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-secondaryLight hover:text-teal-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Micronaut</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-secondaryLight hover:text-teal-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">NestJS</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-secondaryLight hover:text-teal-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Laravel</span>
+                        </div>
+                    </div>
+                    <!-- Skill 3 -->
+                    <div>
+                        <h4 class="font-display text-lg font-bold text-dark mb-4 flex items-center gap-2">
+                            <i class="fas fa-database text-cyan-600" aria-hidden="true"></i> Databases
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-cyan-50 hover:text-cyan-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">PostgreSQL</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-cyan-50 hover:text-cyan-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">MySQL</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-cyan-50 hover:text-cyan-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">MongoDB</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-cyan-50 hover:text-cyan-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Redis</span>
+                        </div>
+                    </div>
+                    <!-- Skill 4 -->
+                    <div>
+                        <h4 class="font-display text-lg font-bold text-dark mb-4 flex items-center gap-2">
+                            <i class="fas fa-cloud text-lime-600" aria-hidden="true"></i> Cloud & DevOps
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-lime-50 hover:text-lime-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">AWS EC2 & S3</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-lime-50 hover:text-lime-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Docker</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-lime-50 hover:text-lime-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Linux</span>
+                            <span class="px-4 py-2 bg-slate-50 hover:bg-lime-50 hover:text-lime-700 transition-colors border border-slate-200 rounded-xl text-sm font-medium text-slate-700 cursor-default">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7 & 8. Contact & CTA WA Section -->
+        <section id="contact" class="py-24 bg-light">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="bg-gradient-to-br from-primary to-secondary rounded-[2.5rem] p-12 md:p-16 text-center shadow-2xl shadow-primary/20 relative overflow-hidden">
+                    <!-- Background Decoration -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
+                    
+                    <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6 relative z-10">Have a Brilliant Project Idea?</h2>
+                    <p class="text-white/90 text-lg mb-10 max-w-2xl mx-auto relative z-10">
+                        Let's collaborate! I am ready to help design and build a robust backend system to advance your business.
+                    </p>
+                    
+                    <!-- WhatsApp CTA Button (Replace with your actual number) -->
+                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" aria-label="Chat via WhatsApp" class="relative z-10 inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-primaryHover font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl">
+                        <i class="fab fa-whatsapp text-2xl text-primary" aria-hidden="true"></i>
+                        Chat via WhatsApp
                     </a>
-                    <a href="https://github.com/nandaamanta" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                        <span>View GitHub</span>
-                        <span>↗</span>
-                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-frame">
-                    <div class="profile-glow"></div>
-                    <img src="https://nandaamanta.github.io/asset/img/nanda2.jpeg" alt="I Putu Nanda Amanta - Backend Developer" class="profile-img">
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator"></div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-header">
-            <span class="section-label">What I Do</span>
-            <h2 class="section-title">Technical Expertise</h2>
-            <p class="section-subtitle">Mastering various modern technologies to build powerful digital solutions</p>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">💻</div>
-                <h3>Programming Languages</h3>
-                <div class="skill-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Go</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">C#</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🚀</div>
-                <h3>Frameworks & Tools</h3>
-                <div class="skill-tags">
-                    <span class="tag">Spring Boot</span>
-                    <span class="tag">Micronaut</span>
-                    <span class="tag">NestJS</span>
-                    <span class="tag">Laravel</span>
-                    <span class="tag">Tailwind</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">💾</div>
-                <h3>Database Systems</h3>
-                <div class="skill-tags">
-                    <span class="tag">MySQL</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Cassandra</span>
-                    <span class="tag">Redis</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">☁️</div>
-                <h3>Cloud & DevOps</h3>
-                <div class="skill-tags">
-                    <span class="tag">AWS EC2</span>
-                    <span class="tag">AWS S3</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Linux</span>
-                    <span class="tag">Git</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="section-header">
-            <span class="section-label">Career Journey</span>
-            <h2 class="section-title">Work Experience</h2>
-            <p class="section-subtitle">Professional experience across various companies and industries</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Backend Developer</h3>
-                <div class="timeline-meta">
-                    <span class="meta-badge">Triwangsa Digital</span>
-                    <span class="meta-badge">Nov 2024 - Present</span>
-                    <span class="meta-badge">Denpasar, Bali</span>
-                </div>
-                <ul>
-                    <li>Developing full-stack Laravel applications with focus on performance and scalability</li>
-                    <li>Refactoring codebase to improve maintainability and reduce technical debt</li>
-                    <li>Providing technical support and insights to improve product quality</li>
-                    <li>Collaborating with cross-functional teams to deliver robust solutions</li>
-                </ul>
-            </div>
-            
-            <div class="timeline-item">
-                <h3>Fullstack Developer</h3>
-                <div class="timeline-meta">
-                    <span class="meta-badge">Omni IT Consulting</span>
-                    <span class="meta-badge">May 2025 - Present</span>
-                    <span class="meta-badge">Surabaya, Indonesia</span>
-                </div>
-                <ul>
-                    <li>Building and maintaining ERP systems (finance, inventory, HR modules)</li>
-                    <li>Designing and implementing scalable backend services using Laravel</li>
-                    <li>Collaborating across teams to ensure solutions meet business requirements</li>
-                </ul>
-            </div>
-            
-            <div class="timeline-item">
-                <h3>Freelance Backend Developer</h3>
-                <div class="timeline-meta">
-                    <span class="meta-badge">Vodjo</span>
-                    <span class="meta-badge">May 2025 - Jul 2025</span>
-                    <span class="meta-badge">Bandung, Indonesia</span>
-                </div>
-                <ul>
-                    <li>Developed ride-hailing platform similar to Gojek using Node.js (Express)</li>
-                    <li>Built RESTful APIs for booking, payments, and real-time tracking</li>
-                    <li>Contributed to system scalability to handle concurrent users</li>
-                </ul>
-            </div>
-            
-            <div class="timeline-item">
-                <h3>Backend Developer</h3>
-                <div class="timeline-meta">
-                    <span class="meta-badge">DOT Indonesia</span>
-                    <span class="meta-badge">Aug 2022 - Nov 2024</span>
-                    <span class="meta-badge">Jakarta, Indonesia</span>
-                </div>
-                <ul>
-                    <li>Developed RESTful APIs for large-scale web applications</li>
-                    <li>Collaborated with frontend, QA, and project management teams</li>
-                    <li>Managed technical communication with clients and ensured timely delivery</li>
-                    <li>Worked on government projects including DPR Open Data and messaging systems</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <h3>Founder & CEO </h3>
-                <div class="timeline-meta">
-                    <span class="meta-badge">EXP Digital Solution</span>
-                    <span class="meta-badge">2021 - Present</span>
-                    <span class="meta-badge">Bali, Indonesia</span>
-                </div>
-                <ul>
-                    <li>Founded software house providing digital solutions for various clients (UMKM)</li>
-                    <li>Designed system architecture and database structures</li>
-                    <li>Managed Ubuntu servers for all client websites</li>
-                    <li>Focused on Systemm Analyse, performance, and business impact</li>
-                </ul>
-            </div>
-            
-            <div class="timeline-item">
-                <h3>Junior Backend Developer</h3>
-                <div class="timeline-meta">
-                    <span class="meta-badge">Global Logistic Express (GLE)</span>
-                    <span class="meta-badge">Jul 2021 - Aug 2022</span>
-                    <span class="meta-badge">Denpasar, Bali</span>
-                </div>
-                <ul>
-                    <li>Developed new features and fixed bugs to maintain system stability</li>
-                    <li>Managed servers and ensured optimal performance of logistics applications</li>
-                    <li>Gained foundational experience in production environment management</li>
-                </ul>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-header">
-            <span class="section-label">Portfolio</span>
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Selected work demonstrating expertise across various industries</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>DPR Open Data</h3>
-                    <p class="project-role">Backend Developer @ DOT Indonesia</p>
-                    <p>Public open data system for Indonesian Parliament with high-performance architecture. Implemented efficient data retrieval and processing mechanisms for large-scale government data.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Java</span>
-                        <span class="tag">Spring Boot</span>
-                        <span class="tag">PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>DPR Sniper (Messaging System)</h3>
-                    <p class="project-role">Backend Developer @ DOT Indonesia</p>
-                    <p>Internal communication system for Indonesian Parliament with enterprise-level security. Built secure messaging infrastructure with role-based access control.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Java</span>
-                        <span class="tag">Spring Boot</span>
-                        <span class="tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Papua Football Academy</h3>
-                    <p class="project-role">Backend Developer @ Triwangsa Digital</p>
-                    <p>Sports academy management system with focus on backend performance optimization. Implemented efficient data handling for athlete records and scheduling.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Laravel</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">AWS</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>MIND ID Retirement System</h3>
-                    <p class="project-role">Backend Developer @ DOT Indonesia</p>
-                    <p>Pension bonus calculation system with zero production errors. Developed accurate financial computation algorithms and thorough testing procedures.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Java</span>
-                        <span class="tag">Micronaut</span>
-                        <span class="tag">PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Exclusive Rent Bali</h3>
-                    <p class="project-role">Freelance Project @ EXP Digital Solution</p>
-                    <p>Vehicle rental website with strong SEO optimization and modern UI/UX. Full-stack development including booking system and payment integration.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Laravel</span>
-                        <span class="tag">Tailwind</span>
-                        <span class="tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Moonestate Property</h3>
-                    <p class="project-role">Freelance Project @ EXP Digital Solution</p>
-                    <p>Real estate platform for property listings and management. Implemented property search, filtering, and inquiry systems.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Laravel</span>
-                        <span class="tag">Tailwind</span>
-                        <span class="tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Slukat Learning Center</h3>
-                    <p class="project-role">Freelance Project @ EXP Digital Solution</p>
-                    <p>Educational platform for learning center management. Built student enrollment, course management, and progress tracking features.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Laravel</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">Bootstrap</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Ride-Hailing Platform</h3>
-                    <p class="project-role">Backend Developer @ Vodjo</p>
-                    <p>Gojek-like platform with real-time tracking and payment integration. Developed scalable microservices architecture for high-concurrency scenarios.</p>
-                    <div class="skill-tags" style="margin-top: 1rem;">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Express</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-header">
-            <span class="section-label">Get In Touch</span>
-            <h2 class="section-title">Let's Work Together</h2>
-            <p class="section-subtitle">Open for freelance projects and full-time opportunities</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="contact-icon">📧</div>
-                <h3>Email</h3>
-                <a href="mailto:nansamgr@gmail.com">nansamgr@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">📱</div>
-                <h3>Phone</h3>
-                <p>+62 895-3306-67787</p>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">💼</div>
-                <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/i-putu-nanda-amanta" target="_blank" rel="noopener noreferrer">View Profile</a>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">💻</div>
-                <h3>GitHub</h3>
-                <a href="https://github.com/nandaamanta" target="_blank" rel="noopener noreferrer">@nandaamanta</a>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <h3>Location</h3>
-                <p>Gianyar, Bali, Indonesia</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 I Putu Nanda Amanta. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Backend Developer | Web Developer | Software Engineer</p>
+    <footer class="py-8 bg-white border-t border-slate-200 text-center">
+        <p class="text-slate-500 text-sm">
+            &copy; 2026 I Putu Nanda Amanta. All rights reserved. 
+        </p>
     </footer>
 
-    <script src="js/script.js"></script>
 </body>
 </html>
